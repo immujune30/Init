@@ -33,27 +33,27 @@
   <script>
   $(document).ready(function(){
   
-	console.log('in');
 	
-	var settings = {
+	
+	
+	
+	$("#showArticles").click(function(){
+		var settings = {
 		  "async": true,
 		  "crossDomain": true,
-		  "contentType": "application/json",
-		  "dataType": "json",
 		  "url": "https://lww.azure-api.net/ejournals/TOCArticleListByIssueTypeAndJournalShortName?issueType=CurrentIssue&journalShortname=plasreconsurg",
 		  "method": "GET",
 		  "headers": {
 			"ocp-apim-subscription-key": "ddc380316f8e47b88d11f5802fe9c0eb",
 			"cache-control": "no-cache",
-			
+			"postman-token": "e0be8c6c-9c03-84e5-bd2c-bb28ae8beafc"
 		  }
 		}
-	
-	$("#showArticles").click(function(){
+
 		$.ajax(settings).done(function (response) {
 		  console.log(response);
 		});
-});
+	});
   });
   
   </script>
